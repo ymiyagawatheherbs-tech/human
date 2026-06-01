@@ -826,8 +826,8 @@ button { font: inherit; }
 }
 .classroom-image {
   width: 100%;
-  aspect-ratio: 4 / 5;
-  background-image: url('images/classroom.jpg');
+  aspect-ratio: 4 / 3;
+  background-image: url('images/school_entrance.jpg');
   background-size: cover;
   background-position: center;
   border-radius: var(--radius-sm);
@@ -859,7 +859,7 @@ button { font: inherit; }
 .entry-bg {
   position: absolute;
   inset: 0;
-  background-image: url('images/details_bg.jpg');
+  background-image: url('images/hero_original.jpg');
   background-size: cover;
   background-position: center;
   z-index: -2;
