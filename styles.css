@@ -1087,3 +1087,48 @@ button { font: inherit; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .hero-scroll span { animation: none; }
 }
+
+/* ── Typology: lifestyle banner & summary chart (added) ── */
+.typology-banner {
+  margin: var(--s-12) 0 var(--s-16);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 18px 50px rgba(28, 36, 30, 0.10);
+}
+.typology-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.typology-chart {
+  max-width: 760px;
+  margin: var(--s-16) auto var(--s-8);
+  text-align: center;
+}
+.typology-chart a {
+  display: block;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 18px 50px rgba(28, 36, 30, 0.10);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.typology-chart a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 60px rgba(28, 36, 30, 0.16);
+}
+.typology-chart img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.typology-chart figcaption {
+  margin-top: var(--s-3);
+  font-family: var(--font-jp);
+  font-size: var(--text-sm);
+  letter-spacing: 0.04em;
+  color: var(--c-moss);
+  opacity: 0.78;
+}
+@media (max-width: 880px) {
+  .typology-banner { margin: var(--s-8) 0 var(--s-10); }
+}
