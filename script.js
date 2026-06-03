@@ -15,7 +15,7 @@ const revealEls = document.querySelectorAll(
   '.schedule-info > div, .entry-card, .entry-notice, .pull-quote, ' +
   '.concept-text p, .concept-image, .classroom-image, ' +
   '.question-tag, .question-title, .question-lead, .typology-note, .curriculum-note, ' +
-  '.typology-banner, .typology-chart'
+  '.typology-banner'
 );
 revealEls.forEach(el => el.classList.add('reveal'));
 
