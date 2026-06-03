@@ -634,34 +634,13 @@ button { font: inherit; }
 }
 .lesson {
   display: grid;
-  grid-template-columns: 140px 1fr;
+  grid-template-columns: 1fr;
   gap: var(--s-10);
   background: var(--c-paper);
   padding: var(--s-10) var(--s-12);
   border: 1px solid var(--c-line-soft);
   border-left: 3px solid var(--c-moss);
   align-items: start;
-}
-.lesson-num {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--s-1);
-  padding-top: var(--s-2);
-}
-.lesson-num .vol {
-  font-family: var(--font-display);
-  font-size: 11px;
-  letter-spacing: 0.32em;
-  color: var(--c-gold-deep);
-}
-.lesson-num .no {
-  font-family: var(--font-display);
-  font-size: 56px;
-  font-weight: 500;
-  line-height: 1;
-  color: var(--c-moss);
-  letter-spacing: -0.02em;
 }
 .lesson-date {
   font-family: var(--font-display-jp);
@@ -673,7 +652,7 @@ button { font: inherit; }
 }
 .lesson-title {
   font-family: var(--font-display-jp);
-  font-size: var(--text-xl);
+  font-size: clamp(25px, 3vw, 38px);
   font-weight: 600;
   color: var(--c-moss);
   margin: 0 0 var(--s-2);
@@ -737,8 +716,6 @@ button { font: inherit; }
 
 @media (max-width: 720px) {
   .lesson { grid-template-columns: 1fr; gap: var(--s-4); padding: var(--s-8); }
-  .lesson-num { flex-direction: row; align-items: baseline; gap: var(--s-3); }
-  .lesson-num .no { font-size: 36px; }
 }
 
 /* =========================================
@@ -921,15 +898,6 @@ button { font: inherit; }
   color: var(--c-moss);
   transform: translateY(-4px);
 }
-.entry-card-num {
-  font-family: var(--font-display);
-  font-size: 11px;
-  letter-spacing: 0.32em;
-  color: var(--c-gold);
-  margin: 0 0 var(--s-4);
-  transition: color 0.35s;
-}
-.entry-card:hover .entry-card-num { color: var(--c-gold-deep); }
 .entry-card-date {
   font-family: var(--font-display);
   font-size: 22px;
