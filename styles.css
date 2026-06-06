@@ -642,14 +642,6 @@ button { font: inherit; }
   border-left: 3px solid var(--c-moss);
   align-items: start;
 }
-.lesson-date {
-  font-family: var(--font-display-jp);
-  font-size: var(--text-base);
-  color: var(--c-gold-deep);
-  margin: 0 0 var(--s-2);
-  font-weight: 500;
-  letter-spacing: 0.04em;
-}
 .lesson-title {
   font-family: var(--font-display-jp);
   font-size: clamp(25px, 3vw, 38px);
@@ -875,9 +867,9 @@ button { font: inherit; }
 }
 .entry-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: var(--s-6);
-  max-width: 1080px;
+  max-width: 1200px;
   margin: 0 auto var(--s-16);
 }
 .entry-card {
@@ -898,15 +890,16 @@ button { font: inherit; }
   color: var(--c-moss);
   transform: translateY(-4px);
 }
-.entry-card-date {
-  font-family: var(--font-display);
-  font-size: 22px;
-  letter-spacing: 0.06em;
+.entry-card-series {
+  font-family: var(--font-display-jp);
+  font-size: var(--text-xl);
+  font-weight: 500;
+  letter-spacing: 0.04em;
   color: var(--c-paper);
-  margin: 0 0 var(--s-5);
+  margin: 0 0 var(--s-3);
   transition: color 0.35s;
 }
-.entry-card:hover .entry-card-date { color: var(--c-moss); }
+.entry-card:hover .entry-card-series { color: var(--c-moss); }
 .entry-card-title {
   font-family: var(--font-display-jp);
   font-size: var(--text-base);
@@ -1071,4 +1064,37 @@ button { font: inherit; }
 }
 @media (max-width: 880px) {
   .typology-banner { margin: var(--s-8) 0 var(--s-10); }
+}
+
+/* ── Per-lesson detail (date / fee / format) ── */
+.lesson-detail {
+  margin: 0 0 var(--s-5);
+  padding: var(--s-4) 0;
+  border-top: 1px solid var(--c-line-soft);
+  border-bottom: 1px solid var(--c-line-soft);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+.lesson-detail > div {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: var(--s-4);
+  align-items: baseline;
+}
+.lesson-detail dt {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  color: var(--c-gold-deep);
+  font-weight: 500;
+}
+.lesson-detail dd {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--c-ink-soft);
+  line-height: 1.7;
+}
+@media (max-width: 720px) {
+  .lesson-detail > div { grid-template-columns: 80px 1fr; gap: var(--s-3); }
 }
