@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>体質学基礎Ⅰ 3つのタイプで、お客様を見極める | 体質学講習会 2026 — THE HERBS</title>
+<meta name="description" content="体質学講習会の第1回。外胚葉・中胚葉・内胚葉の3つの体質類型を学び、顔や手の形からお客様の体質を見極める力を養います。カウンセリングの信頼を深め、サロンの提案力を高める入門の回。" />
+<meta property="og:title" content="体質学基礎Ⅰ — 3つのタイプで、お客様を見極める" />
+<meta property="og:description" content="外胚葉・中胚葉・内胚葉の3類型から、お客様一人ひとりを見極める力を養う、体質学講習会の第1回。" />
+<meta property="og:type" content="article" />
+<link rel="preconnect" href="https://api.fontshare.com" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,700&f[]=work-sans@300,400,500,600,700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  /* ===== Lesson detail page ===== */
+  .lesson-hero {
+    padding: 132px clamp(20px, 4vw, 48px) 60px;
+    background: linear-gradient(180deg, var(--c-bg-alt), var(--c-bg));
+    border-bottom: 1px solid var(--c-line);
+  }
+  .lesson-hero-inner { max-width: 900px; margin: 0 auto; }
+  .lesson-back {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-family: var(--font-body); font-size: var(--text-sm); font-weight: 500;
+    letter-spacing: 0.06em; color: var(--c-gold-deep); margin-bottom: var(--s-8);
+    transition: color 0.25s;
+  }
+  .lesson-back:hover { color: var(--c-moss); }
+  .lesson-eyebrow {
+    font-family: var(--font-body); font-size: var(--text-xs); font-weight: 600;
+    letter-spacing: 0.3em; text-transform: uppercase; color: var(--c-gold-deep);
+    margin-bottom: var(--s-4);
+  }
+  .lesson-page-title {
+    font-family: var(--font-display-jp); font-weight: 600;
+    font-size: clamp(28px, 4.4vw, 50px); line-height: 1.42; color: var(--c-moss);
+    margin: 0 0 var(--s-5); letter-spacing: 0.02em;
+  }
+  .lesson-theme {
+    font-family: var(--font-jp); font-size: var(--text-lg); line-height: 1.95;
+    color: var(--c-ink-soft); margin: 0; max-width: 40em;
+  }
+
+  .lesson-body { padding: var(--s-20) clamp(20px, 4vw, 48px) var(--s-16); }
+  .lesson-body-inner { max-width: 860px; margin: 0 auto; }
+  .lesson-block { margin-bottom: var(--s-16); }
+  .lesson-block:last-child { margin-bottom: 0; }
+  .lesson-block h2 {
+    font-family: var(--font-display-jp); font-weight: 600;
+    font-size: clamp(21px, 2.7vw, 31px); line-height: 1.5; color: var(--c-moss);
+    margin: 0 0 var(--s-6); padding-bottom: var(--s-3);
+    border-bottom: 1px solid var(--c-line); letter-spacing: 0.02em;
+  }
+  .lesson-block p {
+    font-family: var(--font-jp); font-size: var(--text-base); line-height: 2.05;
+    color: var(--c-ink); margin: 0 0 var(--s-4);
+  }
+  .lesson-block p:last-child { margin-bottom: 0; }
+  .lesson-lead p { font-size: var(--text-lg); line-height: 2.1; color: var(--c-ink-soft); }
+
+  /* point / outcome list */
+  .point-list { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--s-3); }
+  .point-list li {
+    position: relative; padding: var(--s-4) var(--s-6) var(--s-4) calc(var(--s-10) + 4px);
+    background: var(--c-paper); border: 1px solid var(--c-line); border-radius: var(--radius-md);
+    font-family: var(--font-jp); font-size: var(--text-base); line-height: 1.85; color: var(--c-ink);
+  }
+  .point-list li::before {
+    content: ''; position: absolute; left: var(--s-6); top: 1.65em;
+    width: 8px; height: 8px; border-radius: 50%; background: var(--c-gold);
+  }
+
+  /* figures */
+  .lesson-figure { margin: var(--s-8) 0 0; }
+  .lesson-figure img {
+    display: block; width: 100%; height: auto;
+    border-radius: var(--radius-lg); border: 1px solid var(--c-line);
+  }
+  .lesson-figure figcaption {
+    font-family: var(--font-jp); font-size: var(--text-sm); color: var(--c-muted);
+    text-align: center; margin-top: var(--s-3); line-height: 1.7;
+  }
+
+  /* topic list (dl) */
+  .topic-list { display: grid; gap: 0; border-top: 1px solid var(--c-line); }
+  .topic-row {
+    display: grid; grid-template-columns: 200px 1fr; gap: var(--s-6);
+    padding: var(--s-5) 0; border-bottom: 1px solid var(--c-line);
+  }
+  .topic-row dt {
+    font-family: var(--font-display-jp); font-weight: 600; font-size: var(--text-lg);
+    color: var(--c-moss); line-height: 1.6;
+  }
+  .topic-row dd {
+    margin: 0; font-family: var(--font-jp); font-size: var(--text-base);
+    line-height: 1.95; color: var(--c-ink);
+  }
+
+  /* highlighted "現場でどう活きるか" block */
+  .lesson-highlight {
+    background: var(--c-moss); border-radius: var(--radius-lg);
+    padding: var(--s-12) clamp(24px, 5vw, 56px);
+  }
+  .lesson-highlight h2 { color: var(--c-paper); border-bottom-color: rgba(255,252,248,0.22); }
+  .lesson-highlight p { color: rgba(255,252,248,0.92); }
+  .lesson-highlight .pull {
+    font-family: var(--font-display-jp); font-weight: 500;
+    font-size: clamp(18px, 2.2vw, 24px); line-height: 1.75; color: var(--c-sage);
+    margin: 0 0 var(--s-6);
+  }
+
+  /* fact box */
+  .fact-box {
+    background: var(--c-paper); border: 1px solid var(--c-line);
+    border-radius: var(--radius-lg); padding: clamp(20px, 3vw, 36px);
+  }
+  .fact-box dl { display: grid; gap: 0; margin: 0; }
+  .fact-row {
+    display: grid; grid-template-columns: 110px 1fr; gap: var(--s-5);
+    padding: var(--s-4) 0; border-bottom: 1px solid var(--c-line-soft);
+  }
+  .fact-row:last-child { border-bottom: none; }
+  .fact-row dt {
+    font-family: var(--font-body); font-size: var(--text-sm); font-weight: 600;
+    letter-spacing: 0.08em; color: var(--c-gold-deep);
+  }
+  .fact-row dd {
+    margin: 0; font-family: var(--font-jp); font-size: var(--text-base);
+    line-height: 1.8; color: var(--c-ink);
+  }
+
+  /* CTA block */
+  .cta-block {
+    text-align: center; background: var(--c-bg-alt);
+    border-radius: var(--radius-lg); padding: clamp(40px, 6vw, 72px) var(--s-6);
+    margin-top: var(--s-16);
+  }
+  .cta-block h2 {
+    font-family: var(--font-display-jp); font-weight: 600;
+    font-size: clamp(22px, 3vw, 34px); color: var(--c-moss); margin: 0 0 var(--s-4);
+  }
+  .cta-block p {
+    font-family: var(--font-jp); font-size: var(--text-base); line-height: 1.9;
+    color: var(--c-ink-soft); margin: 0 auto var(--s-8); max-width: 32em;
+  }
+  .cta-block .note {
+    font-size: var(--text-sm); color: var(--c-muted); margin-top: var(--s-5); margin-bottom: 0;
+  }
+
+  @media (max-width: 640px) {
+    .topic-row { grid-template-columns: 1fr; gap: var(--s-2); }
+    .topic-row dt { font-size: var(--text-base); }
+    .fact-row { grid-template-columns: 88px 1fr; gap: var(--s-3); }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="index.html" class="logo" aria-label="THE HERBS">
+      <img src="images/logo.jpg" alt="THE HERBS" class="logo-img" width="160" height="24" />
+    </a>
+    <nav class="nav-main" aria-label="メイン">
+      <a href="index.html#concept">講座について</a>
+      <a href="index.html#typology">3つの体質類型</a>
+      <a href="index.html#curriculum">カリキュラム</a>
+      <a href="index.html#schedule">日程・受講料</a>
+      <a href="https://liff.line.me/2010327961-qbWcOTRL?liff_id=2010327961-qbWcOTRL&amp;group_id=184127" class="nav-cta" target="_blank" rel="noopener">この回に申し込む</a>
+    </nav>
+  </div>
+</header>
+
+<section class="lesson-hero">
+  <div class="lesson-hero-inner">
+    <a href="index.html#curriculum" class="lesson-back">← 講習会のカリキュラムに戻る</a>
+    <p class="lesson-eyebrow">体質学基礎Ⅰ ／ Foundation</p>
+    <h1 class="lesson-page-title">3つのタイプで、お客様を見極める</h1>
+    <p class="lesson-theme">体質類型の理論、タイプの見分け方、そして現場での活かし方まで。すべての回の土台となる、体質学のはじめの一歩です。</p>
+  </div>
+</section>
+
+<div class="lesson-body">
+  <div class="lesson-body-inner">
+
+    <section class="lesson-block lesson-lead">
+      <p>「同じケアをしているのに、お客様によって結果が違う」——その理由のひとつが、生まれ持った"体質"の違いです。体質学基礎Ⅰでは、人を3つの体質類型（外胚葉・中胚葉・内胚葉）でとらえる考え方を学び、顔立ちや体つき、手の形といった"見た目に表れるサイン"から、お客様の体質を見極める目を養います。</p>
+      <figure class="lesson-figure">
+        <img src="images/lesson_three_women.jpg" alt="外胚葉・中胚葉・内胚葉の3つの体質タイプの女性イラスト" loading="lazy" />
+        <figcaption>外胚葉・中胚葉・内胚葉——同じ"きれいになりたい"でも、似合う装いも、心地よい暮らし方も、タイプごとに違います。</figcaption>
+      </figure>
+    </section>
+
+    <section class="lesson-block">
+      <h2>この回で得られること</h2>
+      <ul class="point-list">
+        <li>体質学の全体像と、3つの体質類型の基本がはっきりわかる</li>
+        <li>顔・体つき・手などから、体質タイプを見分ける視点が身につく</li>
+        <li>タイプに合わせて、ケアや提案を変える"入口"がつかめる</li>
+      </ul>
+    </section>
+
+    <section class="lesson-block">
+      <h2>学ぶ内容の詳細</h2>
+      <dl class="topic-list">
+        <div class="topic-row"><dt>体質学とは</dt><dd>体質学という考え方の成り立ちと、サロンワークにどう結びつくのかという全体像をつかみます。</dd></div>
+        <div class="topic-row"><dt>胚葉の3類型</dt><dd>外胚葉型・中胚葉型・内胚葉型——それぞれの体の傾向や特徴を、基礎から整理して理解します。</dd></div>
+        <div class="topic-row"><dt>タイプの見分け方</dt><dd>顔の形、骨格、体つき、手の形など、観察すべきポイントと見分けの視点を具体的に学びます。</dd></div>
+        <div class="topic-row"><dt>3体質それぞれの特徴</dt><dd>肌・髪・体・気質の傾向をタイプごとに知り、お客様像をイメージできるようにします。</dd></div>
+        <div class="topic-row"><dt>ケア・提案への活用</dt><dd>見極めたタイプを、どうケアや提案に落とし込むか。次回以降につながる"使い方"の基礎を押さえます。</dd></div>
+      </dl>
+      <figure class="lesson-figure">
+        <img src="images/lesson_hands.jpg" alt="3つの体質タイプによる手の形の違い" loading="lazy" />
+        <figcaption>顔立ちだけでなく、手の形にも体質のサインが表れます。指の長さや手のひらの厚みも、見分けの手がかりに。</figcaption>
+      </figure>
+    </section>
+
+    <section class="lesson-block lesson-highlight">
+      <h2>現場でどう活きるか</h2>
+      <p class="pull">体質学は、誰もが「自分のこと」として身を乗り出す内容です。</p>
+      <p>顔や手の形を見て体質を言い当てると、「へー、なんでわかるの？」という驚きが生まれます。その小さな"なんでわかるの"が、お客様との距離を一気に縮めてくれます。</p>
+      <p>けれど、本当の価値はその先にあります。会話の中で「お客様はこういう傾向がありますよね？」「こんなお悩み、ありませんか？」とさりげなくポイントを指摘できると、お客様は「そんなに私のことをわかってくれるの」と感じます。"わかってくれる人"からの提案は、すっと受け入れられます。</p>
+      <p>結果として、サロンへの信頼は確実に高まり、サロンそのものの価値が格段に上がります。そして、その信頼は、おすすめした商品やケアの売上にも自然につながっていきます。体質学は、知識であると同時に、お客様との関係を深める"会話の武器"になるのです。</p>
+    </section>
+
+    <section class="lesson-block">
+      <h2>受講後にできるようになること</h2>
+      <ul class="point-list">
+        <li>お客様を見て、3つの体質タイプのどれに近いか見当をつけられる</li>
+        <li>タイプの傾向をふまえて、カウンセリングの会話を組み立てられる</li>
+        <li>「この方には、このケア」という提案の根拠を持てる</li>
+      </ul>
+    </section>
+
+    <section class="lesson-block">
+      <h2>こんな方におすすめ・受講の前提</h2>
+      <p>お客様一人ひとりに本当に合った提案がしたい美容師・エステティシャンの方、カウンセリングや日々の会話にもう一段の深みを持たせたい方におすすめの回です。体質学を初めて学ぶ方を想定しており、予備知識は必要ありません。</p>
+      <p>体質学基礎Ⅱ・Ⅲ・Ⅳは、この体質学基礎Ⅰの受講を前提としています。まずはこの回から始めてください。</p>
+    </section>
+
+    <section class="lesson-block">
+      <h2>開催概要</h2>
+      <div class="fact-box">
+        <dl>
+          <div class="fact-row"><dt>開催時間</dt><dd>10:00〜16:00（昼休憩あり）</dd></div>
+          <div class="fact-row"><dt>受講料</dt><dd>お取引会員 ¥22,000／非会員 ¥33,000（税込）</dd></div>
+          <div class="fact-row"><dt>形式</dt><dd>座学のみ</dd></div>
+          <div class="fact-row"><dt>会場</dt><dd>THE HERBS 植物美容学校（兵庫県神戸市灘区大内通1-7-17 1F）</dd></div>
+          <div class="fact-row"><dt>日程</dt><dd>お申し込みページでお選びいただけます</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="cta-block">
+      <h2>体質学基礎Ⅰに申し込む</h2>
+      <p>お客様を「見極める目」を養う、はじめの一歩。下のボタンから、LINEでお申し込みいただけます。</p>
+      <a href="https://liff.line.me/2010327961-qbWcOTRL?liff_id=2010327961-qbWcOTRL&amp;group_id=184127" class="btn btn-primary" target="_blank" rel="noopener">お申し込みはこちら →</a>
+      <p class="note">日程はお申し込みページでお選びいただけます。</p>
+    </section>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <p class="footer-logo">THE HERBS</p>
+      <p class="footer-tagline">植物美容と植物療法で、<br/>美しく健やかな毎日を。</p>
+    </div>
+    <div class="footer-info">
+      <p><strong>株式会社THE HERBS</strong></p>
+      <p>化粧品製造業・化粧品製造販売業</p>
+      <p>メインオフィス・工場：兵庫県芦屋市南宮町3-10</p>
+      <p>植物美容学校：兵庫県神戸市灘区大内通1-7-17 1F</p>
+      <p>THE HERBS神戸阪急店：神戸阪急本館6階 モーニングフロー内</p>
+    </div>
+    <nav class="footer-nav" aria-label="フッター">
+      <a href="https://www.the-herbs.co.jp/" target="_blank" rel="noopener">ホーム</a>
+      <a href="https://www.the-herbs.co.jp/pro" target="_blank" rel="noopener">サロンの方へ</a>
+      <a href="https://www.the-herbs.co.jp/school" target="_blank" rel="noopener">植物美容学校</a>
+      <a href="https://www.the-herbs.co.jp/about" target="_blank" rel="noopener">THE HERBSとは</a>
+      <a href="https://www.the-herbs.co.jp/ask" target="_blank" rel="noopener">お問い合わせ</a>
+    </nav>
+  </div>
+  <div class="container footer-copy">
+    <p>©2026 THE HERBS. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

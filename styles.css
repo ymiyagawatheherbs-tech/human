@@ -688,6 +688,23 @@ button { font: inherit; }
   padding-bottom: 4px;
   transition: color 0.2s, border-color 0.2s;
 }
+.lesson-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-3) var(--s-6);
+}
+.lesson-detail-link {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--c-gold-deep);
+  transition: color 0.2s;
+}
+.lesson-detail-link:hover { color: var(--c-moss); }
 .lesson-cta:hover {
   color: var(--c-gold-deep);
   border-bottom-color: var(--c-gold-deep);
