@@ -10,7 +10,7 @@ window.addEventListener('scroll', () => {
 
 // Reveal on scroll
 const revealEls = document.querySelectorAll(
-  '.section-eyebrow, .section-title, .section-lead, .hero-content > *, ' +
+  '.section-eyebrow, .section-title, .section-lead, .hero-text > *, ' +
   '.benefit-item, .type-card, .lesson, .audience-list li, ' +
   '.schedule-info > div, .entry-card, .entry-notice, .pull-quote, ' +
   '.concept-text p, .concept-image, .classroom-image, ' +
