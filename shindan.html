@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE HERBS｜体質セルフチェック</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --moss:#5A4145; --ink:#3F3034; --inksoft:#8C7478;
+    --gold:#DC9F95; --goldd:#BC7468;
+    --cream:#FBF1E9; --paper:#FFFCF8; --line:#EADBD0;
+    --ecto:#C4604A; --meso:#3A6285; --endo:#3A7A50;
+    --min:'Shippori Mincho',serif; --go:'Noto Sans JP',sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family:var(--go); color:var(--ink); background:var(--cream);
+    -webkit-font-smoothing:antialiased; line-height:1.7;
+    display:flex; justify-content:center; padding:24px 16px 56px;
+  }
+  .wrap{width:100%; max-width:560px}
+  .brand{text-align:center; margin-bottom:18px}
+  .brand .name{font-family:var(--min); font-size:13px; letter-spacing:.32em; color:var(--inksoft); text-indent:.32em}
+  .card{
+    background:var(--paper); border:1px solid var(--line); border-radius:18px;
+    padding:32px 26px 30px; box-shadow:0 14px 40px -28px rgba(90,65,69,.5);
+  }
+  /* ---- intro ---- */
+  .eyebrow{font-family:var(--min); font-size:12px; letter-spacing:.28em; color:var(--goldd); text-align:center; text-indent:.28em; margin-bottom:14px}
+  h1{font-family:var(--min); font-weight:700; color:var(--moss); text-align:center; font-size:27px; line-height:1.45; margin-bottom:8px}
+  .lead{color:var(--inksoft); font-size:14.5px; text-align:center; margin:14px 4px 26px}
+  .dots3{display:flex; gap:10px; justify-content:center; margin:22px 0 4px}
+  .dots3 span{width:11px; height:11px; border-radius:50%}
+  .d-e{background:var(--ecto)} .d-m{background:var(--meso)} .d-n{background:var(--endo)}
+  .btn{
+    display:block; width:100%; border:none; cursor:pointer; font-family:var(--go);
+    font-weight:700; font-size:16px; color:#fff; background:var(--goldd);
+    border-radius:999px; padding:16px; margin-top:18px; transition:filter .15s, transform .05s;
+  }
+  .btn:hover{filter:brightness(1.05)} .btn:active{transform:translateY(1px)}
+  .note{font-size:12px; color:var(--inksoft); text-align:center; margin-top:18px; line-height:1.7}
+  /* ---- quiz ---- */
+  .progress{display:flex; align-items:center; gap:12px; margin-bottom:22px}
+  .pbar{flex:1; height:6px; background:var(--line); border-radius:999px; overflow:hidden}
+  .pfill{height:100%; width:0; background:var(--gold); border-radius:999px; transition:width .35s ease}
+  .pnum{font-family:var(--min); font-size:12px; color:var(--inksoft); letter-spacing:.08em; white-space:nowrap}
+  .qno{font-family:var(--min); color:var(--goldd); font-size:13px; letter-spacing:.18em; margin-bottom:8px}
+  .qtext{font-family:var(--min); font-weight:600; color:var(--moss); font-size:20px; line-height:1.55; margin-bottom:22px}
+  .opt{
+    display:block; width:100%; text-align:left; cursor:pointer; font-family:var(--go);
+    font-size:15px; color:var(--ink); background:#fff; border:1.5px solid var(--line);
+    border-radius:13px; padding:15px 17px; margin-bottom:12px; line-height:1.6;
+    transition:border-color .15s, background .15s, transform .05s;
+  }
+  .opt:hover{border-color:var(--gold); background:#fffaf4}
+  .opt:active{transform:translateY(1px)}
+  .back{display:inline-block; margin-top:6px; background:none; border:none; cursor:pointer;
+    color:var(--inksoft); font-family:var(--go); font-size:13px; padding:6px 2px}
+  .back:hover{color:var(--goldd)}
+  /* ---- result ---- */
+  .rband{border-radius:14px; padding:26px 22px; text-align:center; color:#fff; margin-bottom:22px}
+  .rband .en{font-family:var(--min); font-size:12px; letter-spacing:.34em; opacity:.85; text-indent:.34em}
+  .rband .jp{font-family:var(--min); font-weight:700; font-size:30px; margin-top:4px; letter-spacing:.03em; line-height:1.3}
+  .rband .namesub{font-size:.58em; opacity:.85; font-weight:600; letter-spacing:.02em}
+  .rband .essence{font-size:14px; margin-top:10px; opacity:.95}
+  .rsub{font-size:13px; color:var(--inksoft); text-align:center; margin:-8px 0 22px}
+  .balance{margin:2px 0 22px}
+  .btitle{font-family:var(--min); font-size:12px; letter-spacing:.18em; color:var(--inksoft); text-align:center; margin-bottom:13px; text-indent:.18em}
+  .bar{display:flex; height:15px; border-radius:999px; overflow:hidden; background:var(--line)}
+  .bar i{height:100%; display:block}
+  .legend{margin-top:15px}
+  .lrow{display:flex; align-items:center; gap:11px; padding:8px 2px; border-bottom:1px solid var(--line); font-size:14.5px}
+  .lrow:last-child{border-bottom:none}
+  .ltier{font-family:var(--min); font-weight:700; color:var(--moss); flex:0 0 26px; font-size:14px}
+  .ldot{width:11px; height:11px; border-radius:50%; flex:0 0 auto}
+  .lname{flex:1; color:var(--ink)}
+  .lpct{font-family:var(--min); font-weight:600; color:var(--moss); letter-spacing:.02em}
+  .rrow{display:flex; gap:13px; padding:15px 2px; border-bottom:1px solid var(--line)}
+  .rrow:last-of-type{border-bottom:none}
+  .rlabel{font-family:var(--min); font-weight:600; color:var(--goldd); font-size:14px; flex:0 0 84px; padding-top:1px}
+  .rbody{font-size:14px; color:var(--ink); flex:1}
+  .secondary{background:var(--cream); border-radius:12px; padding:14px 16px; margin-top:18px; font-size:13.5px; color:var(--moss)}
+  .secondary b{font-family:var(--min)}
+  .actions{margin-top:24px}
+  .ghost{background:none; color:var(--goldd); border:1.5px solid var(--gold)}
+  a.linkback{display:block; text-align:center; margin-top:14px; color:var(--inksoft); font-size:13px; text-decoration:none}
+  a.linkback:hover{color:var(--goldd)}
+  .hidden{display:none}
+  .fade{animation:fade .3s ease}
+  @keyframes fade{from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:none}}
+  @media (prefers-reduced-motion:reduce){.fade{animation:none} .pfill{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand"><div class="name">THE HERBS</div></div>
+
+  <!-- INTRO -->
+  <section class="card" id="intro">
+    <div class="eyebrow">体質セルフチェック</div>
+    <h1>あなたは、<br>どの体質タイプ？</h1>
+    <p class="lead">生まれ持った体質には、外胚葉型・中胚葉型・内胚葉型の3つの傾向があります。8つの質問で、あなたに近いタイプを見てみましょう。</p>
+    <div class="dots3"><span class="d-e"></span><span class="d-m"></span><span class="d-n"></span></div>
+    <button class="btn" id="startBtn">はじめる</button>
+    <p class="note">所要時間 約1分／結果はその場で表示されます</p>
+  </section>
+
+  <!-- QUIZ -->
+  <section class="card hidden" id="quiz">
+    <div class="progress">
+      <div class="pbar"><div class="pfill" id="pfill"></div></div>
+      <div class="pnum" id="pnum">1 / 8</div>
+    </div>
+    <div class="qno" id="qno">Q1</div>
+    <div class="qtext" id="qtext"></div>
+    <div id="opts"></div>
+    <button class="back hidden" id="backBtn">← 前の質問にもどる</button>
+  </section>
+
+  <!-- RESULT -->
+  <section class="card hidden" id="result">
+    <div class="rband" id="rband">
+      <div class="jp" id="rJp"></div>
+      <div class="essence" id="rEssence"></div>
+    </div>
+    <div class="balance">
+      <div class="btitle">体質バランス</div>
+      <div class="bar" id="rBar"></div>
+      <div class="legend" id="rLegend"></div>
+    </div>
+    <div class="rrow"><div class="rlabel">体の特徴</div><div class="rbody" id="rBody"></div></div>
+    <div class="rrow"><div class="rlabel">気質</div><div class="rbody" id="rKishitsu"></div></div>
+    <div class="rrow"><div class="rlabel">ケアの方向</div><div class="rbody" id="rCare"></div></div>
+    <div class="secondary hidden" id="rSecondary"></div>
+    <p class="note">体質は1つに割り切れるものではありません。いちばん強い傾向に、別の傾向が重なって現れます。これは簡易的なセルフチェックです。正確な見極めは、サロンでのカウンセリングで。</p>
+    <div class="actions">
+      <button class="btn ghost" id="retryBtn">もう一度チェックする</button>
+      <a class="linkback" href="types.html">← 3つのタイプの紹介を見る</a>
+    </div>
+  </section>
+</div>
+
+<script>
+const QUESTIONS = [
+  {q:"体つきの印象に近いのは？", o:[
+    {t:"ほっそりとして、華奢な印象", k:"e"},
+    {t:"引き締まって、メリハリのある印象", k:"m"},
+    {t:"やわらかく、丸みのある印象", k:"n"}]},
+  {q:"顔立ちに近いのは？", o:[
+    {t:"小づくりで、面長", k:"e"},
+    {t:"輪郭がはっきりした顔立ち", k:"m"},
+    {t:"まるみのある、やさしい顔立ち", k:"n"}]},
+  {q:"手首や足首は、どんな感じ？", o:[
+    {t:"細くて、きゃしゃ", k:"e"},
+    {t:"しっかりしている", k:"m"},
+    {t:"ふっくら、やわらかい", k:"n"}]},
+  {q:"体重は、どちらかというと？", o:[
+    {t:"増えにくいほう", k:"e"},
+    {t:"変わりにくいほう", k:"m"},
+    {t:"増えやすいほう", k:"n"}]},
+  {q:"お肌で気になりやすいのは？", o:[
+    {t:"乾燥しやすく、くすみが気になる", k:"e"},
+    {t:"肌にハリがあり、つやが出にくい", k:"m"},
+    {t:"色白で、赤みが出やすい", k:"n"}]},
+  {q:"体調で感じやすいのは？", o:[
+    {t:"冷えやすい", k:"e"},
+    {t:"肩や首がこりやすい", k:"m"},
+    {t:"むくみやすい", k:"n"}]},
+  {q:"性格に近いのは？", o:[
+    {t:"繊細で、感じやすいほう", k:"e"},
+    {t:"しっかり者で、がんばり屋", k:"m"},
+    {t:"おおらかで、人づきあいが好き", k:"n"}]},
+  {q:"気持ちの傾向に近いのは？", o:[
+    {t:"一人の時間で、ほっとする", k:"e"},
+    {t:"つい、がんばりすぎてしまう", k:"m"},
+    {t:"まわりに、気をつかうほう", k:"n"}]}
+];
+
+const TYPES = {
+  e:{jp:"外胚葉型", color:"#C4604A", essence:"感じる力がゆたかな人",
+     body:"ほっそりとした、しなやかな体つき。冷えやすく、疲れをためやすい一面があります。",
+     kishitsu:"感受性がゆたかで、ものごとをていねいに感じとるタイプ。",
+     care:"体を温め、休息と深い呼吸を大切に。少しずつこまめに、消化のよいものを。"},
+  m:{jp:"中胚葉型", color:"#3A6285", essence:"芯のある、がんばり屋さん",
+     body:"引き締まった、メリハリのある体つき。がんばりがきく一方、こりや張りが出やすい一面も。",
+     kishitsu:"しっかり者で、目標に向かってこつこつ進めるタイプ。",
+     care:"がんばりすぎたら、休息と気分転換を。塩分は控えめに、バランスよく。"},
+  n:{jp:"内胚葉型", color:"#3A7A50", essence:"あたたかく、和やかな人",
+     body:"丸みのある、やわらかな体つき。代謝はおだやかな傾向です。",
+     kishitsu:"おおらかで、人とのつながりを大切にするあたたかいタイプ。",
+     care:"よく噛む・野菜から食べるなど食べ方の工夫と、こまめに体を動かすことを。"}
+};
+
+const CARE = {
+  "e":"体を温め、休息と深い呼吸を大切に。少しずつこまめに、消化のよいものを。",
+  "m":"がんばりすぎたら、休息と気分転換を。塩分は控えめに、バランスよく。",
+  "n":"よく噛む・野菜から食べるなど食べ方の工夫と、こまめに体を動かすことを。",
+  "e-m":"体を温め休息をとることを軸に。こりや張りをためないよう軽いストレッチを。がんばりすぎには気をつけて。",
+  "e-n":"体を温め、消化のよい食事を軸に。巡りがおだやかな面もあるので、むくみ対策に軽い運動を取り入れて。",
+  "m-e":"休息と気分転換を軸に。繊細で冷えやすい面もあるので、体を温め、深い呼吸も忘れずに。",
+  "m-n":"バランスのよい食事と塩分控えめを軸に。ためこみやすい面もあるので、よく噛んで食べることを意識して。",
+  "n-e":"食べ方の工夫とこまめな運動を軸に。冷えやすい面もあるので、体を温めることも意識して。",
+  "n-m":"食べ方の工夫とこまめな運動を軸に。がんばりやすい面もあるので、こり・張りのケアも取り入れて。"
+};
+// Fisher–Yates shuffle (returns a new array)
+function shuffle(arr){
+  const a = arr.slice();
+  for(let i=a.length-1; i>0; i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
+  return a;
+}
+// integer percentages from counts (out of 8) summing to 100 (largest remainder)
+function toPercents(score){
+  const ks = Object.keys(score);
+  const raw = ks.map(k=>({k, v: score[k]/8*100}));
+  const out = raw.map(r=>({k:r.k, p:Math.floor(r.v), rem:r.v-Math.floor(r.v)}));
+  let left = 100 - out.reduce((a,b)=>a+b.p,0);
+  out.sort((a,b)=> b.rem-a.rem);
+  for(let i=0;i<left;i++) out[i%out.length].p++;
+  const res={}; out.forEach(o=> res[o.k]=o.p); return res;
+}
+
+const $ = id => document.getElementById(id);
+let cur = 0;
+let answers = [];
+let quiz = [];   // per-session shuffled copy of QUESTIONS (option order randomized)
+function buildQuiz(){ quiz = QUESTIONS.map(q=>({q:q.q, o:shuffle(q.o)})); }
+
+function showCard(id){
+  ["intro","quiz","result"].forEach(s=>$(s).classList.add("hidden"));
+  const el = $(id); el.classList.remove("hidden");
+  el.classList.remove("fade"); void el.offsetWidth; el.classList.add("fade");
+  window.scrollTo({top:0, behavior:"instant" in window ? "instant" : "auto"});
+}
+
+function renderQ(){
+  const Q = quiz[cur];
+  $("pnum").textContent = (cur+1)+" / "+quiz.length;
+  $("pfill").style.width = (cur/quiz.length*100)+"%";
+  $("qno").textContent = "Q"+(cur+1);
+  $("qtext").textContent = Q.q;
+  const box = $("opts"); box.innerHTML = "";
+  Q.o.forEach(opt=>{
+    const b = document.createElement("button");
+    b.className = "opt"; b.textContent = opt.t;
+    b.onclick = ()=>choose(opt.k);
+    box.appendChild(b);
+  });
+  $("backBtn").classList.toggle("hidden", cur===0);
+}
+
+function choose(k){
+  answers[cur] = k;
+  if(cur < quiz.length-1){ cur++; renderQ(); }
+  else { showResult(); }
+}
+
+$("backBtn").onclick = ()=>{ if(cur>0){ cur--; renderQ(); } };
+
+function showResult(){
+  const score = {e:0,m:0,n:0};
+  answers.forEach(k=> score[k]++ );
+  const ranked = Object.keys(score).sort((a,b)=> score[b]-score[a]);
+  const nz = ranked.filter(k=> score[k] > 0);   // present tendencies, strongest first
+  const pct = toPercents(score);
+  const top = nz[0], second = nz[1], third = nz[2];
+  const dom = TYPES[top];
+  const stem = k => TYPES[k].jp.replace("型","");
+  $("pfill").style.width = "100%";
+
+  // headline: 副性主型 (stronger comes last); single type if only one present
+  $("rband").style.background = dom.color;
+  if(nz.length >= 2){
+    $("rJp").innerHTML = '<span class="namesub">'+stem(second)+'性</span>'+dom.jp;
+  } else {
+    $("rJp").textContent = dom.jp;
+  }
+  $("rEssence").textContent = dom.essence;
+
+  // balance bar + 主/副/微 legend with percentages
+  const tiers = ["主","副","微"];
+  $("rBar").innerHTML = nz.map(k=> '<i style="width:'+pct[k]+'%;background:'+TYPES[k].color+'"></i>').join("");
+  $("rLegend").innerHTML = nz.map((k,i)=>
+    '<div class="lrow"><span class="ltier">'+tiers[i]+'</span>'
+    +'<span class="ldot" style="background:'+TYPES[k].color+'"></span>'
+    +'<span class="lname">'+TYPES[k].jp+'</span>'
+    +'<span class="lpct">'+pct[k]+'%</span></div>').join("");
+
+  $("rBody").textContent = dom.body;
+  $("rKishitsu").textContent = dom.kishitsu;
+  // dedicated care text per combination (主-副), or single type
+  const careKey = (nz.length >= 2) ? (top+"-"+second) : top;
+  $("rCare").textContent = CARE[careKey] || dom.care;
+
+  // narrative "よく見ると…"
+  const sec = $("rSecondary");
+  if(nz.length >= 2){
+    let html = "よく見ると、<b style='color:"+TYPES[second].color+"'>"+stem(second)+"</b>（副）の傾向もあわせ持っています（"+TYPES[second].essence+"）。";
+    if(nz.length >= 3){
+      html += "ごくわずかに <b style='color:"+TYPES[third].color+"'>"+stem(third)+"</b>（微）の面も見られます。";
+    }
+    if(score[top]===score[second]){
+      html += "　主と副はほぼ同じ強さで、バランスよく混ざり合っています。";
+    }
+    sec.innerHTML = html; sec.classList.remove("hidden");
+  } else {
+    sec.classList.add("hidden");
+  }
+  showCard("result");
+}
+
+$("startBtn").onclick = ()=>{ cur=0; answers=[]; buildQuiz(); renderQ(); showCard("quiz"); };
+$("retryBtn").onclick = ()=>{ cur=0; answers=[]; showCard("intro"); };
+
+buildQuiz();
+renderQ();
+</script>
+</body>
+</html>
