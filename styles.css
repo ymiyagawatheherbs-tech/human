@@ -1191,3 +1191,18 @@ button { font: inherit; }
   border-radius: 99px; padding: 3px 10px; }
 .cc-soon-text { font-size: 13px; line-height: 1.9; color: rgba(255,252,248,.6); margin: 8px 0 16px; }
 @media (max-width: 720px) { .course-cards { grid-template-columns: 1fr; } }
+
+
+/* ===== パーソナルカウンセリング 導線カード ===== */
+.counsel-card { display: flex; align-items: center; justify-content: space-between; gap: var(--s-5);
+  background: var(--c-paper); border: 1px solid var(--c-line); border-radius: var(--radius-lg);
+  padding: var(--s-6) clamp(20px, 3vw, 32px); margin: var(--s-8) auto 0; max-width: 860px;
+  transition: border-color .25s, transform .25s; }
+.counsel-card:hover { border-color: var(--c-gold); transform: translateY(-2px); }
+.counsel-text strong { display: block; font-family: var(--font-display-jp); font-weight: 600;
+  font-size: var(--text-lg); color: var(--c-moss); margin-bottom: 4px; }
+.counsel-text > span { font-family: var(--font-jp); font-size: var(--text-sm);
+  color: var(--c-ink-soft); line-height: 1.7; }
+.counsel-arrow { font-family: var(--font-body); font-size: var(--text-sm); font-weight: 600;
+  letter-spacing: .04em; color: var(--c-gold-deep); white-space: nowrap; }
+@media (max-width: 640px) { .counsel-card { flex-direction: column; align-items: flex-start; gap: var(--s-4); } }
