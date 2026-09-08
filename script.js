@@ -40,6 +40,24 @@ if ('IntersectionObserver' in window) {
   revealEls.forEach(el => el.classList.add('is-in'));
 }
 
+// 終了した日程に横線と「終了」ラベルを付ける（data-date を今日と比較）
+(function markPastDates() {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  document.querySelectorAll('.cc-dates li[data-date]').forEach(li => {
+    const parts = (li.getAttribute('data-date') || '').split('-').map(Number);
+    if (parts.length !== 3 || parts.some(isNaN)) return;
+    const day = new Date(parts[0], parts[1] - 1, parts[2]);
+    if (day >= today) return;
+    li.classList.add('is-past');
+    if (li.querySelector('.cc-end')) return;
+    const tag = document.createElement('span');
+    tag.className = 'cc-end';
+    tag.textContent = '終了';
+    li.appendChild(tag);
+  });
+})();
+
 // Smooth-scroll already handled by CSS scroll-behavior. Add header offset.
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', (e) => {
