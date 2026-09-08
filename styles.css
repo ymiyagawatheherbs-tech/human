@@ -1194,6 +1194,18 @@ button { font: inherit; }
 .cc-badge { font-size: 11px; font-weight: 700; color: var(--c-moss); background: var(--c-gold);
   border-radius: 99px; padding: 3px 10px; }
 .cc-soon-text { font-size: 13px; line-height: 1.9; color: rgba(255,252,248,.6); margin: 8px 0 16px; }
+/* ホバーで背景が明るくなるため、文字色も反転させる（白地に白文字の防止） */
+.cc-day, .cc-time, .cc-open, .cc-d, .cc-t, .cc-seat, .cc-soon-text, .cc-end {
+  transition: color .35s, background .35s, border-color .35s; }
+.course-card:hover .cc-day { color: var(--c-moss); }
+.course-card:hover .cc-time { color: var(--c-gold-deep); }
+.course-card:hover .cc-open { color: var(--c-moss); background: rgba(220,159,149,.28); }
+.course-card:hover .cc-d { color: var(--c-moss); }
+.course-card:hover .cc-t { color: var(--c-ink-soft); }
+.course-card:hover .cc-seat { color: var(--c-ink-soft); }
+.course-card:hover .cc-soon-text { color: var(--c-ink-soft); }
+.course-card:hover .cc-end { color: var(--c-muted); border-color: var(--c-line); }
+
 @media (max-width: 720px) { .course-cards { grid-template-columns: 1fr; } }
 
 
