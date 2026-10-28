@@ -184,7 +184,8 @@ button { font: inherit; }
 
 @media (max-width: 880px) {
   .nav-main { gap: var(--s-4); font-size: 13px; }
-  .nav-main a:not(.nav-cta) { display: none; }
+  .nav-main a:not(.nav-cta):not(.nav-home) { display: none; }
+  .nav-main a.nav-home { font-size: 12px; }
 }
 
 /* =========================================
